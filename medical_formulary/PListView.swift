@@ -12,7 +12,7 @@ struct PListView: View {
         NavigationStack {
             VStack {
                 NavigationLink {
-                    PDFView("PDF #1")
+                    PDFView("Essential ")
                 } label: {
                     Text("PDF #1")
                 }
