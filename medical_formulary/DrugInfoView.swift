@@ -7,9 +7,14 @@
 
 import SwiftUI
 
+
 struct DrugInfoView: View {
     @State private var isON = false
     let name: String
+    
+    @ObservedObject var model = Model()
+    
+
     
     init(_ name: String) {
         self.name = name
@@ -22,10 +27,31 @@ struct DrugInfoView: View {
         .frame(alignment: .topLeading)
         .padding()
         
-        Text(name + " info goes here").frame(maxHeight: .infinity)
+        Text(model.data).frame(maxHeight: .infinity)
     }
 }
 
-#Preview {
-    DrugInfoView("Preview")
+class Model: ObservableObject {
+    @Published var data: String = ""
+    init() { self.load(file: "gabe_test") }
+    func load(file: String) {
+        if let filepath = Bundle.main.path(forResource: file, ofType: "txt") {
+            do {
+                let contents = try String(contentsOfFile: filepath)
+                DispatchQueue.main.async {
+                    self.data = contents
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } else {
+            print("File not found")
+        }
+    }
 }
+    
+    
+    #Preview {
+        DrugInfoView("Preview")
+    }
+    
