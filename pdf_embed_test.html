@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>PDF Viewer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+</head>
+
+<body>
+    <h1>PDF VIEWER</h1>
+    <button>Content</button>
+
+    <div id="pdf-container"></div>
+    <button>Content</button>
+
+
+    <script type="module">
+        // Import the function from the JavaScript file
+        import { renderPdf } from './render_pdf.js';
+
+        // Call the function to load and display the PDF
+        renderPdf('dummy.pdf', [1, 2], 'pdf-container');
+    </script>
+</body>
+
+</html>
