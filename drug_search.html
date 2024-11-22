@@ -5,21 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scrollable Clickable List</title>
     <link rel="stylesheet" href="styles.css">
+
+    <script src="script.js"></script>
+    <script src="csv_reader.js"></script>
 </head>
 <body>
   <h1>Drug Search</h1>
       <!-- index.html -->
     <div class="scrollable-list">
-        <ul>
-            <li onclick="navigateToDetailPage('Acyclovir')">Acyclovir</li>
-            <li onclick="navigateToDetailPage('Adrenaline')">Adrenaline</li>
-            <li onclick="navigateToDetailPage('Albendazole')">Albendazole</li>
-            <li onclick="navigateToDetailPage('Aluminum_Hydroxide')">Aluminum Hydroxide</li>
-            <li onclick="navigateToDetailPage('Amitriptyline')">Amitriptyline</li>
-            <!-- Add more items as needed -->
-        </ul>
+        <ul id="drug_list"></ul>
+        <script>
+            // Fetch drug info and display
+            getDrugList()
+        </script>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
