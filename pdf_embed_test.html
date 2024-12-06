@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>PDF Viewer</title>
+</head>
+
+<body>
+    <h1>PDF VIEWER</h1>
+    <button>Top Content</button>
+
+    <!-- This container gets replaced with pdf embed -->
+    <div id="pdf-container"></div> 
+
+    <button>Bottom Content</button>
+
+    <script type="module">
+        import { renderPdf } from './render_pdf.js';
+
+        // Call the function to load and display the PDF
+        renderPdf('./assets/dummy.pdf', [1, 2], 'pdf-container');
+    </script>
+</body>
+
+</html>
