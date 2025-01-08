@@ -1,5 +1,5 @@
 // Fetch the drug list data and insert into the HTML list
-function getDrugList() {
+function fillDrugList() {
     let data = fetch("./assets/finalTest.csv")
                 .then(response => response.text())
                 .then(data => {
@@ -13,6 +13,7 @@ function getDrugList() {
                         li.innerText = data[i][0]
                         li.setAttribute("onclick", "navigateToDetailPage(\"" + data[i][0] + "\")")
                         list.appendChild(li)
+                        console.log(data[i].toString())
                     }
                 })
 }
