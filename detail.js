@@ -6,6 +6,7 @@ function getItemFromUrl() {
 
 document.addEventListener("DOMContentLoaded", () => {
     const item = getItemFromUrl();
-    const itemDisplay = document.getElementById("item-display");
-    itemDisplay.textContent = item ? `You selected: ${item}` : "No item selected.";
+
+    // Fill out data
+    populateDrugDetail(item, "EN")
 });
