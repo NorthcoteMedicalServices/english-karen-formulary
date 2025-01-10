@@ -57,9 +57,3 @@ translations = {
   tc18:["Vaccination Schedule","ကသံၣ်ဒီသဒၢအတၢ်ရဲၣ်တၢ်ကျဲၤ (ယိၤကီၢ် ၊ ပယီၤကီၢ်)"]
 
 };
-
-/*
-        android:text="DRUGS IN PREGNANCY\nကသံၣ်သ့ၣ်တဖၣ်လၢၦၤမိၢ်ဒၢဂီၢ်"
-        android:text="View FORMULARY\nတၢ်ကွၢ်ကသံၣ်လံာ်နဲၣ်ကျဲအံၤ"
-        android:text="Drug Search\nတၢ်ဃုကသံၣ်"
-*/
