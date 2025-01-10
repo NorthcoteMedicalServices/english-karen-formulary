@@ -9,25 +9,19 @@
 </head>
 <body>
   <h1>Karen Formulary</h1>
-  <h1>English/ကညီကျိာ်</h1>
-  <label class="slider">
-    <input type="checkbox">
-    <span class="slider-button"></span>
-    <display:inline-block;>
-</label>
-
+  <button onclick="translatePage()">English/ကညီကျိာ်</button>
       <!-- index.html -->
       <a href="drug_search.html">
-        <button>DRUG SEARCH</button>
+        <button class="translate" id="home1">DRUG SEARCH</button>
       </a>
       <a href="z_scores.html">
-        <button>Z SCORES</button>
+        <button class="translate" id="home2">Z SCORES</button>
       </a>
       <a href="view_formulary.html">
-        <button>VIEW FORMULARY</button>
+        <button class="translate" id="home3">VIEW FORMULARY</button>
       </a>
       <a href="drugs_in_pregnancy.html">
-        <button>DRUGS IN PREGNANCY</button>
+        <button class="translate" id="home4">DRUGS IN PREGNANCY</button>
       </a>
   
     <script>
@@ -37,6 +31,7 @@
       </script>
 
     <script src="script.js"></script>
+    <script src="translate.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
 
 </body>
