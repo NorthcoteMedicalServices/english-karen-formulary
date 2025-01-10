@@ -130,3 +130,28 @@ button:focus {
     height: auto; /* Maintain the aspect ratio */
     margin-bottom: 10px; /* Add spacing between pages */
 }
+
+
+/* Styling for list items */
+.scrollable-list ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+  }
+  
+  .scrollable-list li {
+    margin: 5px 0; 
+    padding: 10px; 
+    background-color: #f9f9f9; 
+    cursor: pointer;
+  }
+  
+  .scrollable-list a {
+    display: block; 
+    text-decoration: none;
+    color: inherit; 
+  }
+  
+  .scrollable-list li:hover {
+    background-color: #e6e6e6; 
+  }
