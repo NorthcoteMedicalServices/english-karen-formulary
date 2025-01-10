@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>PDF Viewer</title>
+</head>
+
+<body>
+
+    <div id="pdf-container"></div>
+    
+    <script type="module">
+        import { renderPdf } from './render_pdf.js';
+
+        // Extract the page range from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const pageRange = urlParams.get('pageRange') 
+            ? urlParams.get('pageRange').split(',').map(Number) 
+            : [1, 1];  // Default to page 1 if no parameter is found
+
+        renderPdf('./assets/2021KarenFormulary.pdf', pageRange, 'pdf-container');
+    </script>
+</body>
+
+</html>
