@@ -1,0 +1,35 @@
+.navbar{
+    position: relative;
+    background-color: green;
+    overflow: hidden;
+    height: 40px;
+    width: 300px;
+    border-radius: 8px;
+}
+
+.backArrow{
+    height: 30px;
+    width: 30px;
+    background-color: black;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+
+.homeButton{
+    height: 30px;
+    width: 30px;
+    background-color: black;
+    position: absolute;
+    left: 135px;
+    top: 5px;
+}
+
+.translateButton{
+    height: 30px;
+    width: 30px;
+    background-color: black;
+    position: absolute;
+    left: 265px;
+    top: 5px;
+}
