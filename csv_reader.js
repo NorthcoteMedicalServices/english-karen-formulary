@@ -40,12 +40,16 @@ function populateDrugDetail(name, lang) {
 
                     if (info == null) {
                         // Couldn't find it, something has gone wrong
+                        return
                     }
 
                     // Now insert into HTML page
                     let obj = document.getElementById("drug-info")
 
-                    // First set title seperately
+                    // Remove anything already in there (for language swapping)
+                    obj.innerHTML = ''
+
+                    // Set title seperately
                     document.getElementById("MEDICATION").textContent = info[0]
 
                     // Then set individual parts
