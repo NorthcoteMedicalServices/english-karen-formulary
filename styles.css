@@ -4,10 +4,26 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
+    background-image: url('./assets/finalappbackground.png');
+    height: 100vh;
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    background-position: top center;
     margin: 0;
     background-color: #f0f0f0;
 }
+
+h1 {
+    margin: 0;
+    padding: 20px; 
+    margin-bottom: 40px;
+    border-radius: 15px;
+    color: white;
+    background-color: rgb(64, 64, 64); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+}
+
 
 .scrollable-list {
     width: 300px;
@@ -50,66 +66,12 @@ button {
 }
 
 button:hover {
-    background-color: #f8f8f8;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 button:focus {
     outline: none; /* Remove outline on focus */
-}
-
-
-/* Slider container */
-.slider {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 30px;
-    margin-bottom: 10px; /* Space between sliders */
-}
-
-/* Hide the default checkbox */
-.slider input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-/* The slider background */
-.slider-button {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #e0e0e0; /* Default slider background */
-    border: 1px solid #ccc; /* Match the style above */
-    border-radius: 15px; /* Rounded edges for the slider */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-/* The toggle knob */
-.slider-button::before {
-    content: "";
-    position: absolute;
-    height: 22px;
-    width: 22px;
-    left: 4px;
-    bottom: 2px;
-    background-color: #fff; /* Knob color */
-    border: 1px solid #ccc; /* Match styling */
-    border-radius: 50%; /* Circular knob */
-    transition: transform 0.3s ease;
-}
-
-/* Checked state styles */
-.slider input:checked + .slider-button {
-    background-color: #64a832; /* Green background for checked state */
-}
-
-/* Move the knob when checked */
-.slider input:checked + .slider-button::before {
-    transform: translateX(30px); /* Move the knob to the right */
 }
 
 /* The container spans the full width and height of the viewport and allows scrolling */
