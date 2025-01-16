@@ -6,14 +6,20 @@
     <title>Drug Search</title>
     <link rel="stylesheet" href="styles.css">
 
-    <script src="script.js"></script>
+    <script src="detail.js"></script>
     <script src="csv_reader.js"></script>
+    <script src="drug_search.js"></script>
 </head>
 <body>
   <h1>Drug Search</h1>
-      <!-- index.html -->
+
+    <!-- Search bar -->
+    <input type="text" id="search_bar" onkeyup="filterSearch()" placeholder="Search">
+
     <div class="scrollable-list">
+        <!-- Drug list (gets filled by js) -->
         <ul id="drug_list"></ul>
+
         <script>
             // Fetch drug info and display
             fillDrugList()
