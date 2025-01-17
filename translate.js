@@ -1,11 +1,10 @@
 //translate.js
 
-var language = 0; // 0 is for english, 1 is for karen
-var elements;
+let language = 0; // 0 is for english, 1 is for karen
+let elements;
 
 document.addEventListener("DOMContentLoaded", () => {
   elements = document.getElementsByClassName("translate");
-  console.log("got elements");
   if(localStorage.getItem("lang") == "kar"){
     translate();
   }

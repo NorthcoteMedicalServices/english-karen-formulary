@@ -8,12 +8,18 @@
     <link rel="stylesheet" href="navStyle.css">
 </head>
 <body>
-  <!-- Table of contents adds +7 to page count listed at the bottom of pages -->
+  <!-- Table of contents adds +7 to page count listed at the bottom of pages <img class = "icon" src="assets/backArrow.png" alt=""/>-->
   <h1>Formulary Table of Contents</h1>
   <div class="navbar">
-    <div class="backArrow">Back Arrow</div>
-    <div class="homeButton">Home Icon</div>
-    <div class="translateButton" onclick="translatePage()">English/</div>
+    <div class = "navButton arrow left" id="backArrow" onclick="history.back()"></div>
+    <a class = "navButton" id="homeButton" href="index.html"><img class = "icon" src="assets/homeIcon.png" alt=""></a>
+    <div class = "navButton" id="translateButton">
+      <label class="slider">
+        <input type="checkbox">
+        <span class="slider-button" onclick="translatePage()"></span>
+        <display:inline-block;>
+    </label>    
+    </div>
   </div>
 <!-- English/ကညီကျိာ် -->
   <div class="scrollable-list">
@@ -36,7 +42,6 @@
         <li class="translate" id="tc16"><a href="pdf_viewer.html?pageRange=164,169">IV Fluids</a></li>
         <li class="translate" id="tc17"><a href="pdf_viewer.html?pageRange=170,202">Malaria Protocols</a></li>
         <li class="translate" id="tc18"><a href="pdf_viewer.html?pageRange=203,204">Vaccination Schedule</a></li>
-  
     </ul>
   </div>
   <script src="translate.js"></script>

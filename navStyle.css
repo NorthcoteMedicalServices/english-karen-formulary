@@ -2,34 +2,121 @@
     position: relative;
     background-color: green;
     overflow: hidden;
-    height: 40px;
+    min-height: 40px;
     width: 300px;
     border-radius: 8px;
 }
 
-.backArrow{
-    height: 30px;
-    width: 30px;
-    background-color: black;
-    position: absolute;
+.navButton{
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 5px;
+  cursor: pointer;
+}
+
+#backArrow{
     left: 10px;
-    top: 5px;
 }
 
-.homeButton{
-    height: 30px;
-    width: 30px;
-    background-color: black;
-    position: absolute;
-    left: 135px;
-    top: 5px;
+#homeButton{
+    left: 130px;
 }
 
-.translateButton{
-    height: 30px;
-    width: 30px;
-    background-color: black;
-    position: absolute;
-    left: 265px;
-    top: 5px;
+#translateButton{
+    left: 235px;
+}
+
+.icon{
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.arrow {
+  top: 10.5px;
+  height: 15px;
+  width: 15px;
+  border: solid black;
+  border-width: 0 5px 5px 0;
+  display: inline-block;
+  padding: 0px;
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+/* Slider container */
+.slider {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  margin-bottom: 10px; /* Space between sliders */
+}
+
+/* Hide the default checkbox */
+.slider input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider background */
+.slider-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #e0e0e0; /* Default slider background */
+  border: 1px solid #ccc; /* Match the style above */
+  border-radius: 15px; /* Rounded edges for the slider */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* The toggle knob */
+.slider-button::before {
+  content: "";
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 2px;
+  background-color: #fff; /* Knob color */
+  border: 1px solid #ccc; /* Match styling */
+  border-radius: 50%; /* Circular knob */
+  transition: transform 0.3s ease;
+}
+
+/* Checked state styles */
+.slider input:checked + .slider-button {
+  background-color: #64a832; /* Green background for checked state */
+}
+
+/* Move the knob when checked */
+.slider input:checked + .slider-button::before {
+  transform: translateX(30px); /* Move the knob to the right */
+}
+
+/* The container spans the full width and height of the viewport and allows scrolling */
+#pdf-container {
+  width: 100%;
+  max-width: 100%; /* Prevent overflow */
+  height: 100vh; /* Full viewport height */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  background-color: #f5f5f5; /* Optional background for contrast */
+  padding: 10px; /* Add some padding around the pages */
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+/* Ensure each canvas page fills the container's width */
+#pdf-container canvas {
+  width: 100%; /* Make the canvas responsive */
+  height: auto; /* Maintain the aspect ratio */
+  margin-bottom: 10px; /* Add spacing between pages */
 }
