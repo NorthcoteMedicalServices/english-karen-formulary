@@ -5,11 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karen Formulary</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navStyle.css">
     <link rel="manifest" href="./manifest.json">
 </head>
 <body>
   <h1>Karen Formulary</h1>
-  <button onclick="translatePage()">English/ကညီကျိာ်</button>
+  <!-- Navigation Toolbar, relevant files are translate.js and navStyle.css-->
+  <div class="navbar">
+    <div class = "navButton arrow left" id="backArrow" onclick="history.back()"></div>
+    <a class = "navButton" id="homeButton" href="index.html"><img class = "icon" src="assets/homeIcon.png" alt=""></a>
+    <div class = "navButton" id="translateButton">
+      <label class="slider">
+        <input type="checkbox">
+        <span class="slider-button" onclick="translatePage()"></span>
+        <display:inline-block;>
+    </label>    
+    </div>
+  </div>
       <!-- index.html -->
       <a href="drug_search.html">
         <button class="translate" id="home1">DRUG SEARCH</button>
