@@ -1,10 +1,11 @@
 .navbar{
     position: relative;
-    background-color: green;
+    background-color: rgb(64, 64, 64);
     overflow: hidden;
     min-height: 40px;
     width: 300px;
     border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 .navButton{
@@ -16,7 +17,7 @@
 }
 
 #backArrow{
-    left: 10px;
+    left: 15px;
 }
 
 #homeButton{
@@ -35,10 +36,10 @@
 
 .arrow {
   top: 10.5px;
-  height: 15px;
-  width: 15px;
-  border: solid black;
-  border-width: 0 5px 5px 0;
+  height: 12px;
+  width: 12px;
+  border: solid rgb(255, 255, 255);
+  border-width: 0 8px 8px 0;
   display: inline-block;
   padding: 0px;
 }
