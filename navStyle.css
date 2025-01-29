@@ -1,10 +1,11 @@
 .navbar{
-    position: relative;
+    position: absolute;
     background-color: green;
     overflow: hidden;
     min-height: 40px;
-    width: 300px;
-    border-radius: 8px;
+    width: 100%;
+    top: 76px;
+    text-align: center;
 }
 
 .navButton{
@@ -20,11 +21,11 @@
 }
 
 #homeButton{
-    left: 130px;
+    left: 47%;
 }
 
 #translateButton{
-    left: 235px;
+    right: 40px;
 }
 
 .icon{
@@ -80,7 +81,7 @@
 
 /* The toggle knob */
 .slider-button::before {
-  content: "";
+  content: "En/ကညီကျိာ်";
   position: absolute;
   height: 22px;
   width: 22px;
