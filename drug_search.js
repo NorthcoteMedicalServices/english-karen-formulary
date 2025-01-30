@@ -13,7 +13,7 @@ function filterSearch() {
     for (let i = 0; i < items.length; i++) {
         name = items[i].textContent.toUpperCase()
 
-        if (name.startsWith(text)) {
+        if (name.includes(text)) {
             items[i].style.display = ""
         } else {
             items[i].style.display = "none"

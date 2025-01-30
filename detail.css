@@ -1,4 +1,4 @@
-#drug-info {
+/* #drug-info {
     width: 300px;
     max-height: 400px;
     overflow-y: auto;
@@ -6,4 +6,16 @@
     border-radius: 8px;
     background-color: #fff;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
+/* Override background specifically for this page */
+body {
+    background: #afbb68;
+}
+
+#drug-info {
+  overflow-y: auto;
+  margin-top: 60px; /* Adjust this value as needed */
+  margin-left: 10px;
+  margin-right: 10px;
 }

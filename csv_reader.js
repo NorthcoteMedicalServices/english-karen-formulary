@@ -103,12 +103,20 @@ function parseCSV(data) {
             current = ""
         } else if (c == '\n' && !inQuote) {
             obj.push(row)
-            //console.log(row)
             row = []
             current = ""
         } else {
             current += c
         }
+    }
+
+    // Push anything left over
+    if (row != "") {
+        if (current != "") {
+            row.push(current)
+        }
+
+        obj.push(row)
     }
 
     return obj
