@@ -4,7 +4,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url('./assets/finalappbackground.png');
+    background-image: url('../assets/background.png');
     height: 100%;
     background-size: auto 100%;
     background-repeat: repeat-x;
@@ -16,8 +16,8 @@ body {
 
 h1 {
     position: fixed;
-    top: 40px;
-    height: auto;
+    top: 0px;
+    height: 46px;
     width: 100%;
     margin: 0px;
     padding: 5px; 
@@ -33,7 +33,6 @@ h1 {
     width: 300px;
     margin: 100px;
     max-height: 400px;
-    padding-top: 5px;
     overflow-y: auto;
     border: 1px solid #ccc;
     border-radius: 8px;

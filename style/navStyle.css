@@ -1,12 +1,23 @@
-.navbar{
-    position: relative;
+#navbar{
+    position: fixed;
     background-color: rgb(64, 64, 64);
     overflow: hidden;
     min-height: 40px;
-    width: 300px;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    width: 100%;
+    top: 46px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
 }
+
+.navigation{
+  width: 300px;
+  height: 100%;
+  padding-top: 5px;
+  margin-top: 120px;
+}
+
 
 .navButton{
   height: 30px;
@@ -16,7 +27,8 @@
 }
 
 #backArrow{
-    left: 15px;
+    position: relative;
+    left: 10px;
 }
 
 #homeButton{
@@ -35,7 +47,6 @@
 }
 
 .arrow {
-  top: 10.5px;
   height: 12px;
   width: 12px;
   border: solid rgb(255, 255, 255);

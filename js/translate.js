@@ -5,7 +5,7 @@ let elements;
 let lang = localStorage.getItem("lang");
 let navbar = `
   <div class = "navButton arrow left" id="backArrow" onclick="history.back()"></div>
-    <a class = "navButton" id="homeButton" href="index.html"><img src="assets/homeIcon.png" alt=""></a>
+    <a class = "navButton" id="homeButton" href="index.html"><img src="../assets/homeIcon.png" alt=""></a>
     <div class = "navButton" id="translateButton">
       <label class="slider">
         <input id = "toggle" type="checkbox">

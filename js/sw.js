@@ -5,8 +5,8 @@ self.addEventListener('install', event => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE_NAME);
     await cache.addAll([
-      './',
-      './assets/'
+      '../',
+      '../assets/'
     ]);
     self.skipWaiting(); // Immediately activate the new service worker
   })());
@@ -40,7 +40,9 @@ self.addEventListener('fetch', event => {
       return fetchResponse;
     } catch (e) {
       // If network fails, return cached version
-      return caches.match(event.request);
+      //return caches.match(event.request);
+      console.error("Something failed");
+      
     }
   })());
 });

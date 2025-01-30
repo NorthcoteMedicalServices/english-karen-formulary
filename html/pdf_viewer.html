@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="navStyle.css">
+    <link rel="stylesheet" href="../style/styles.css">
+    <link rel="stylesheet" href="../style/navStyle.css">
     <title>PDF Viewer</title>
 </head>
 
@@ -14,17 +14,17 @@
     <div id="pdf-container"></div>
     
     <script type="module">
-        import { renderPdf } from './render_pdf.js';
+        import { renderPdf } from '../js/render_pdf.js';
 
         // Extract the page range from the URL
-        const urlParams = new URLSearchParams(window.location.search);
+        const urlParams = new URLSearchParams(window.location.search);        
         const pageRange = urlParams.get('pageRange') 
             ? urlParams.get('pageRange').split(',').map(Number) 
             : [1, 1];  // Default to page 1 if no parameter is found
 
-        renderPdf('./assets/2021KarenFormulary.pdf', pageRange, 'pdf-container');
+        renderPdf('../assets/2021KarenFormulary.pdf', pageRange, 'pdf-container');
     </script>
-    <script src="translate.js"></script>
+    <script src="../js/translate.js"></script>
 </body>
 
 </html>
