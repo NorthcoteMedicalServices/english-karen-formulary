@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navStyle.css">
     <title>PDF Viewer</title>
 </head>
 
 <body>
-
+    <div id="navbar"></div>
     <div id="pdf-container"></div>
     
     <script type="module">
@@ -23,6 +24,7 @@
 
         renderPdf('./assets/2021KarenFormulary.pdf', pageRange, 'pdf-container');
     </script>
+    <script src="translate.js"></script>
 </body>
 
 </html>

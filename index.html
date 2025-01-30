@@ -11,43 +11,39 @@
 <body>
   <h1>Karen Formulary</h1>
   <!-- Navigation Toolbar, relevant files are translate.js and navStyle.css-->
-  <div class="navbar">
-    <div class = "navButton arrow left" id="backArrow" onclick="history.back()"></div>
-    <a class = "navButton" id="homeButton" href="index.html"><img class = "icon" src="assets/homeIcon.png" alt=""></a>
-    <div class = "navButton" id="translateButton">
-      <label class="slider">
-        <input type="checkbox">
-        <span class="slider-button" onclick="translatePage()"></span>
-        <display:inline-block;>
-    </label>    
-    </div>
-  </div>
-      <!-- index.html -->
-      <a href="drug_search.html">
-        <button class="translate" id="home1">DRUG SEARCH</button>
-      </a>
-      <a href="pdf_viewer.html?pageRange=205,218">
-        <button class="translate" id="home2">Z SCORES</button>
-      </a>
-      <a href="view_formulary.html">
-        <button class="translate" id="home3">VIEW FORMULARY</button>
-      </a>
-      <a href="pdf_viewer.html?pageRange=17,18">
-        <button class="translate" id="home4">DRUGS IN PREGNANCY</button>
-      </a>
-
-      <a href="pdf_viewer.html?pageRange=143,143">
-        <button class="translate" id="home5">TB (TUBERCULOSIS)</button>
-      </a>
-
-      <a href="pdf_viewer.html?pageRange=170,170">
-        <button class="translate" id="home6">Malaria</button>
   
+  <div id="navbar"></div>
+
+  <div class="navigation">
+    <!-- index.html -->
+    <a href="drug_search.html">
+      <button class="translate" id="home1">DRUG SEARCH</button>
+    </a>
+    <a href="pdf_viewer.html?pageRange=205,218">
+      <button class="translate" id="home2">Z SCORES</button>
+    </a>
+    <a href="view_formulary.html">
+      <button class="translate" id="home3">VIEW FORMULARY</button>
+    </a>
+    <a href="pdf_viewer.html?pageRange=17,18">
+      <button class="translate" id="home4">DRUGS IN PREGNANCY</button>
+    </a>
+
+    <a href="pdf_viewer.html?pageRange=143,143">
+      <button class="translate" id="home5">TB (TUBERCULOSIS)</button>
+    </a>
+
+    <a href="pdf_viewer.html?pageRange=170,170">
+      <button class="translate" id="home6">Malaria</button>
+    </a>
+  </div>
+    
+
     <script>
       if('serviceWorker' in navigator) {
         navigator.serviceWorker.register('./sw.js', { scope: './' });
       }
-      </script>
+    </script>
 
     <script src="script.js"></script>
     <script src="translate.js"></script>

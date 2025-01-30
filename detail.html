@@ -9,20 +9,11 @@
     <link rel="stylesheet" href="navStyle.css">
     <script src="detail.js"></script>
     <script src="csv_reader.js"></script>
+    <script src="translate.js"></script>
 </head>
 <body>
     <!-- Navigation Toolbar, relevant files are translate.js and navStyle.css-->
-    <div class="navbar">
-      <div class = "navButton arrow left" id="backArrow" onclick="history.back()"></div>
-      <a class = "navButton" id="homeButton" href="index.html"><img class = "icon" src="assets/homeIcon.png" alt=""></a>
-      <div class = "navButton" id="translateButton">
-        <label class="slider">
-          <input type="checkbox">
-          <span class="slider-button" onclick="swapLang()"></span>
-          <display:inline-block;>
-      </label>    
-      </div>
-    </div>
+    <div id="navbar"></div>
 
     <!-- Title -->
     <h1 id="MEDICATION">No Selected Item<br></h1>
@@ -34,6 +25,5 @@
 
     </div>
 
-    <a href="drug_search.html"><br>Back to List</a>
 </body>
 </html>
