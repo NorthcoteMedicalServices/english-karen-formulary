@@ -6,28 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Item Detail</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="detail.css">
     <link rel="stylesheet" href="navStyle.css">
     <script src="detail.js"></script>
     <script src="csv_reader.js"></script>
-    <style>
-      /* Override background specifically for this page */
-      body {
-          background: #afbb68;
-      }
-
-      #drug-info {
-        overflow-y: auto;
-        margin-top: 60px; /* Adjust this value as needed */
-        margin-left: 10px;
-        margin-right: 10px;
-      }
-  </style>
 </head>
 <body>
-    <!-- Title -->
-    <h1 id="MEDICATION">No Selected Item<br></h1>
-
-
     <!-- Navigation Toolbar, relevant files are translate.js and navStyle.css-->
     <div class="navbar">
       <div class = "navButton arrow left" id="backArrow" onclick="history.back()"></div>
@@ -47,7 +31,5 @@
     <div id="drug-info">
 
     </div>
-
-    <a href="drug_search.html"><br>Back to List</a>
 </body>
 </html>
