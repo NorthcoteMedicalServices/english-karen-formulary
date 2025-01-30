@@ -50,7 +50,12 @@ function populateDrugDetail(name, lang) {
                     obj.innerHTML = ''
 
                     // Set title seperately
-                    document.getElementById("MEDICATION").textContent = info[0]
+                    let title = document.createElement('h1')
+                    title.textContent = info[0]
+                    obj.appendChild(title)
+
+                    
+                    //document.getElementById("MEDICATION").textContent = info[0]
 
                     // Then set individual parts
                     for (let i = 1; i < categories.length; i++) {
@@ -98,12 +103,20 @@ function parseCSV(data) {
             current = ""
         } else if (c == '\n' && !inQuote) {
             obj.push(row)
-            //console.log(row)
             row = []
             current = ""
         } else {
             current += c
         }
+    }
+
+    // Push anything left over
+    if (row != "") {
+        if (current != "") {
+            row.push(current)
+        }
+
+        obj.push(row)
     }
 
     return obj
