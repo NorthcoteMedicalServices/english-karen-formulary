@@ -1,21 +1,11 @@
-#navbar{
-    position: fixed;
-    background-color: green;
+.navbar{
+    position: relative;
+    background-color: rgb(64, 64, 64);
     overflow: hidden;
     min-height: 40px;
-    width: 100%;
-    top: 0px;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: auto;
-  }
-
-.navigation{
-  width: 300px;
-  height: 100%;
-  padding-top: 5px;
-  margin-top: 120px;
+    width: 300px;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 .navButton{
@@ -26,8 +16,7 @@
 }
 
 #backArrow{
-  position: relative;  
-  left: 10px;
+    left: 15px;
 }
 
 #homeButton{
@@ -46,10 +35,11 @@
 }
 
 .arrow {
-  height: 15px;
-  width: 15px;
-  border: solid black;
-  border-width: 0 5px 5px 0;
+  top: 10.5px;
+  height: 12px;
+  width: 12px;
+  border: solid rgb(255, 255, 255);
+  border-width: 0 8px 8px 0;
   display: inline-block;
   padding: 0px;
 }

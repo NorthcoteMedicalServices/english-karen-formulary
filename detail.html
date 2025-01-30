@@ -10,13 +10,38 @@
     <script src="detail.js"></script>
     <script src="csv_reader.js"></script>
     <script src="translate.js"></script>
+    <style>
+      /* Override background specifically for this page */
+      body {
+          background: #afbb68;
+      }
+
+      #drug-info {
+        overflow-y: auto;
+        margin-top: 60px; /* Adjust this value as needed */
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+  </style>
 </head>
 <body>
-    <!-- Navigation Toolbar, relevant files are translate.js and navStyle.css-->
-    <div id="navbar"></div>
-
     <!-- Title -->
     <h1 id="MEDICATION">No Selected Item<br></h1>
+
+
+    <!-- Navigation Toolbar, relevant files are translate.js and navStyle.css-->
+    <div id="navbar"></div>
+    <div class="navbar">
+      <div class = "navButton arrow left" id="backArrow" onclick="history.back()"></div>
+      <a class = "navButton" id="homeButton" href="index.html"><img class = "icon" src="assets/homeIcon.png" alt=""></a>
+      <div class = "navButton" id="translateButton">
+        <label class="slider">
+          <input type="checkbox">
+          <span class="slider-button" onclick="swapLang()"></span>
+      </label>    
+      </div>
+    </div>
+
 
     <!-- Table image -->
 
