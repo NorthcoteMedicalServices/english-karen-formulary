@@ -50,9 +50,8 @@ function populateDrugDetail(name, lang) {
                     obj.innerHTML = ''
 
                     // Set title seperately
-                    let title = document.createElement('h1')
-                    title.textContent = info[0]
-                    obj.appendChild(title)
+                    let title = document.getElementById("title")
+                    title.innerHTML = info[0]
 
                     
                     //document.getElementById("MEDICATION").textContent = info[0]

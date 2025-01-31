@@ -40,9 +40,7 @@ self.addEventListener('fetch', event => {
       return fetchResponse;
     } catch (e) {
       // If network fails, return cached version
-      //return caches.match(event.request);
-      console.error("Something failed");
-      
+      return caches.match(event.request);
     }
   })());
 });

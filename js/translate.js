@@ -2,7 +2,7 @@
 
 let language = 0; // 0 is for english, 1 is for karen
 let elements;
-let lang = localStorage.getItem("lang");
+localStorage.setItem("lang", "eng");
 let navbar = `
   <div class = "navButton arrow left" id="backArrow" onclick="history.back()"></div>
     <a class = "navButton" id="homeButton" href="index.html"><img src="../assets/homeIcon.png" alt=""></a>
@@ -16,7 +16,7 @@ let navbar = `
 `
 
 document.addEventListener("DOMContentLoaded", () => {
-
+  lang = localStorage.getItem("lang");
   elements = document.getElementsByClassName("translate");
   if(elements.length > 0){
     translate();
