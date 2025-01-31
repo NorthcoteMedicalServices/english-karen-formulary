@@ -1,6 +1,6 @@
 // Fetch the drug list data and insert into the HTML list
 function fillDrugList() {
-    let data = fetch("./assets/finalTest.csv")
+    let data = fetch("../assets/drugDetails.csv")
                 .then(response => response.text())
                 .then(data => {
                     // Now we have the data
@@ -19,7 +19,7 @@ function fillDrugList() {
 
 // Fetch data for a specific drug and populate the detail page
 function populateDrugDetail(name, lang) {
-    let data = fetch("./assets/finalTest.csv")
+    let data = fetch("../assets/drugDetails.csv")
                 .then(response => response.text())
                 .then(data => {
                     // Now we have the data
@@ -50,9 +50,8 @@ function populateDrugDetail(name, lang) {
                     obj.innerHTML = ''
 
                     // Set title seperately
-                    let title = document.createElement('h1')
-                    title.textContent = info[0]
-                    obj.appendChild(title)
+                    let title = document.getElementById("title")
+                    title.innerHTML = info[0]
 
                     
                     //document.getElementById("MEDICATION").textContent = info[0]

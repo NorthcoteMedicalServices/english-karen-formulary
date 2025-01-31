@@ -5,8 +5,8 @@ self.addEventListener('install', event => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE_NAME);
     await cache.addAll([
-      './',
-      './assets/'
+      '../',
+      '../assets/'
     ]);
     self.skipWaiting(); // Immediately activate the new service worker
   })());

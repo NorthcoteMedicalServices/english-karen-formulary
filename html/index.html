@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karen Formulary</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <link rel="stylesheet" href="../style/navStyle.css">
+    <link rel="manifest" href="../assets/manifest.json">
+</head>
+<body>
+  <div id="navbar"></div>
+  <h1>Karen Formulary</h1>
+  <!-- Navigation Toolbar, relevant files are translate.js and navStyle.css-->
+
+  <div class="navigation">
+    <!-- index.html -->
+    <a href="drug_search.html">
+      <button class="translate" id="home1">DRUG SEARCH</button>
+    </a>
+    <a href="pdf_viewer.html?pageRange=205,218">
+      <button class="translate" id="home2">Z SCORES</button>
+    </a>
+    <a href="view_formulary.html">
+      <button class="translate" id="home3">VIEW FORMULARY</button>
+    </a>
+    <a href="pdf_viewer.html?pageRange=17,18">
+      <button class="translate" id="home4">DRUGS IN PREGNANCY</button>
+    </a>
+
+    <a href="pdf_viewer.html?pageRange=143,143">
+      <button class="translate" id="home5">TB (TUBERCULOSIS)</button>
+    </a>
+
+    <a href="pdf_viewer.html?pageRange=170,170">
+      <button class="translate" id="home6">Malaria</button>
+    </a>
+  </div>
+    
+
+    <script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('../js/sw.js', { scope: './' });
+      }
+    </script>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/translate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+
+</body>
+</html>

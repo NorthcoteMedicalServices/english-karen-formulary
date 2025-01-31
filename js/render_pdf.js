@@ -2,7 +2,7 @@
 import * as pdfjsLib from './pdfjs/build/pdf.mjs';
 
 // Set the worker source
-pdfjsLib.GlobalWorkerOptions.workerSrc = './pdfjs/build/pdf.worker.mjs';
+pdfjsLib.GlobalWorkerOptions.workerSrc = './pdf.worker.mjs';
 
 /**
  * Function to render a PDF document in a specified page range
@@ -12,7 +12,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = './pdfjs/build/pdf.worker.mjs';
  */
 function renderPdf(pdfUrl, pageRange, containerId) {
     const container = document.getElementById(containerId);
-
+    
     // Clear previous content in container
     container.innerHTML = '';
 

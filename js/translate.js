@@ -2,11 +2,33 @@
 
 let language = 0; // 0 is for english, 1 is for karen
 let elements;
+localStorage.setItem("lang", "eng");
+let navbar = `
+  <div class = "navButton arrow left" id="backArrow" onclick="history.back()"></div>
+    <a class = "navButton" id="homeButton" href="index.html"><img src="../assets/homeIcon.png" alt=""></a>
+    <div class = "navButton" id="translateButton">
+      <label class="slider">
+        <input id = "toggle" type="checkbox">
+        <span class="slider-button" onclick="translatePage()"></span>
+        <display:inline-block;>
+    </label>    
+    </div>
+`
 
 document.addEventListener("DOMContentLoaded", () => {
+  lang = localStorage.getItem("lang");
   elements = document.getElementsByClassName("translate");
-  if(localStorage.getItem("lang") == "kar"){
+  if(elements.length > 0){
     translate();
+  }else{
+    callDrugDetails();
+  }
+
+
+  document.getElementById("navbar").innerHTML += navbar;
+  let toggle = document.getElementById("toggle");
+  if(lang == "kar"){
+    toggle.checked = true;
   }
 });
 
@@ -14,6 +36,15 @@ function translatePage(){
   //swap localStorage language
   localStorage.setItem("lang", (localStorage.getItem("lang") == "kar") ? "eng" : "kar");
   translate()
+  callDrugDetails();
+}
+
+function callDrugDetails(){
+  try {
+    drugDetails();
+  } catch (error) {
+    console.log("not on drug detail page");
+  }
 }
 
 function translate(){
@@ -21,6 +52,7 @@ function translate(){
   language =  lang == "eng" ? 0 : 1;
   document.documentElement.lang = localStorage.getItem("lang");
   for(var i = 0; i < elements.length; i++){
+
     elements[i].innerHTML = translations[elements[i].id][language];
   }
 }
@@ -33,6 +65,8 @@ translations = {
   home2:["Z-SCORES","Z-SCORES"],
   home3:["VIEW FORMULARY","တၢ်ကွၢ်ကသံၣ်လံာ်နဲၣ်ကျဲအံၤ"],
   home4:["DRUGS IN PREGNANCY","ကသံၣ်သ့ၣ်တဖၣ်လၢၦၤမိၢ်ဒၢဂီၢ်"],
+  home6:["TB (TUBERCULOSIS)", "tb kar"],
+  home5:["Malaria", "malaria kar"],
   //Drug Search
 
   // Table of contents
