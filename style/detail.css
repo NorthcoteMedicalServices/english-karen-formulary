@@ -15,7 +15,7 @@ body {
 
 #drug-info {
   overflow-y: auto;
-  margin-top: 80px; /* Adjust this value as needed */
+  margin-top: 100px; /* Adjust this value as needed */
   margin-left: 10px;
   margin-right: 10px;
 }

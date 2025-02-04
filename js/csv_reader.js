@@ -17,6 +17,19 @@ function fillDrugList() {
                 })
 }
 
+// Inserts links based on drug names into text
+// This process is computationally inefficient, but requires no special formatting in the data
+function insertLinks(text, names, self) {
+    // Loop through drug names and create links
+    for (let i = 0; i < names.length; i++) {
+        if (text.toLowerCase().includes(names[i].toLowerCase()) && names[i] != self) {
+            text = text.replaceAll(names[i], "<a href='detail.html?item=" + names[i] + "'>" + names[i] + "</a>")
+        }
+    }
+
+    return text
+}
+
 // Fetch data for a specific drug and populate the detail page
 function populateDrugDetail(name, lang) {
     let data = fetch("../assets/drugDetails.csv")
@@ -29,12 +42,16 @@ function populateDrugDetail(name, lang) {
                     let categories = data[0]
                     let titles = data[1]
                     let info = null
-            
+
+                    // Names of drugs (for creating links)
+                    let names = []
+                    
                     // Loop through and find the relevant drug
                     for (let i = 2; i < data.length; i++) {
+                        names.push(data[i][0]);
+
                         if (data[i][0] == name) {
                             info = data[i]
-                            break;
                         }
                     }
 
@@ -63,6 +80,9 @@ function populateDrugDetail(name, lang) {
                             continue
                         }
 
+                        // Insert links into text where applicable
+                        let txt_with_links = insertLinks(info[i], names, info[0])
+
                         // Otherwise, create div
                         let div = document.createElement('div')
                         div.id = categories[i]
@@ -74,7 +94,7 @@ function populateDrugDetail(name, lang) {
 
                         // Insert text
                         let text = document.createElement('p')
-                        text.textContent = info[i]
+                        text.innerHTML = txt_with_links
                         div.appendChild(text)
 
                         // Finally, write div
