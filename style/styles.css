@@ -31,7 +31,7 @@ h1 {
 
 .scrollable-list {
     width: 300px;
-    margin: 10px;
+    margin: 100px;
     max-height: 400px;
     overflow-y: auto;
     border: 1px solid #ccc;
