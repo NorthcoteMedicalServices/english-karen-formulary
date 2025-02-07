@@ -23,8 +23,43 @@ function insertLinks(text, names, self) {
     // Loop through drug names and create links
     for (let i = 0; i < names.length; i++) {
         if (text.toLowerCase().includes(names[i].toLowerCase()) && names[i] != self) {
+            // Replace for lower case and upper case
             text = text.replaceAll(names[i], "<a href='detail.html?item=" + names[i] + "'>" + names[i] + "</a>")
+            text = text.replaceAll(names[i].toLowerCase(), "<a href='detail.html?item=" + names[i] + "'>" + names[i] + "</a>")
         }
+    }
+
+    // Now replace table names (just hardcoded since it's like that overall)
+    let pdfs = [
+        'Essential Drug Formulary 2021 edition', '1,218',
+        'Introduction To 2021 Edition', '8,11',
+        'Introduction To 2013 Edition', '12,14',
+        'Genereal Guidelines On How To Use The Formulary', '15, 16',
+        'Drugs In Pregnancy', '17,18',
+        'Drugs and G6PD Deficiency', '19,20',
+        'Drugs List By Group', '21,23',
+        'About Ferros (Iron), Vitamins and Multivitamins', '135,136',
+        'Combination Treatment For Genito-Urinary Diseases', '137,172',
+        'Drugs Used For Post Partum Haemorrage (PPH) And Missed Or Incomplete Abortion', '139,143',
+        'About Anti-Retroviral Drugs', '145,146',
+        'Use Of Antibiotics In Combination', '147,149',
+        'Drugs For The Treatement of New Cases Of TB', '150,159',
+        'Antiseptics - Disinfectants', '160,162',
+        'Wound Care / Abscess Care', '163,163',
+        'IV Fluids', '164,169',
+        'Malaria Protocols', '170,202',
+        'Vaccination Schedule', '203,204'
+    ]
+
+    for (let i = 0; i < pdfs.length; i += 2) {
+        if (text.toLowerCase().includes(pdfs[i].toLowerCase())) {
+            // Replace for lower case and upper case
+            text = text.replaceAll(pdfs[i], "<a href='pdf_viewer.html?pageRange=" + pdfs[i + 1] + "'>" + pdfs[i] + "</a>")
+            text = text.replaceAll(pdfs[i].toLowerCase(), "<a href='pdf_viewer.html?pageRange=" + pdfs[i + 1] + "'>" + pdfs[i] + "</a>")
+        }
+
+        console.log(text.toLowerCase())
+        console.log(pdfs[i].toLowerCase())
     }
 
     return text
