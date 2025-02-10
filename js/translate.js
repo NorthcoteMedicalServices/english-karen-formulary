@@ -4,15 +4,17 @@ let language = 0; // 0 is for english, 1 is for karen
 let elements;
 localStorage.setItem("lang", "eng");
 let navbar = `
-  <div class = "navButton arrow left" id="backArrow" onclick="history.back()"></div>
-    <a class = "navButton" id="homeButton" href="index.html"><img src="../assets/homeIcon.png" alt=""></a>
-    <div class = "navButton" id="translateButton">
-      <label class="slider">
-        <input id = "toggle" type="checkbox">
-        <span class="slider-button" onclick="translatePage()"></span>
-        <display:inline-block;>
-    </label>    
-    </div>
+  <div class = "navButton arrow left" onclick="history.back()"></div>
+  <a class = "navButton" id="homeButton" href="index.html"><img src="../assets/homeIcon.png" alt=""></a>
+
+  <div id="translate">
+    <label class="slider">
+      <input id = "toggle" type="checkbox">
+      <span class="slider-button" onclick="translatePage()"></span>
+      <display:inline-block;>
+    </label>
+    test
+  </div>   
 `
 
 document.addEventListener("DOMContentLoaded", () => {

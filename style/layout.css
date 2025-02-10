@@ -1,0 +1,49 @@
+body{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+}
+h1 {
+  height: 46px;
+  width: 100%;
+  margin: 0px;
+  padding: 5px; 
+  color: white;
+  background-color: rgb(64, 64, 64); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  text-align: center;
+  overflow: hidden;
+}
+
+#banner{
+  padding: 20px;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(64, 64, 64);
+}
+
+#wrapper{
+  background-image: url('../assets/background.png');
+  background-size: auto 100%;
+  height: auto;
+  margin: 0px;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#translate{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
