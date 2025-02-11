@@ -17,16 +17,20 @@ function fillDrugList() {
                 })
 }
 
+// Case-insensitive text replace
+function txt_replace(original, s, replacement) {
+    var pattern = new RegExp(s, 'gi')
+    var str = original.replace(pattern, replacement)
+
+    return str
+}
+
 // Inserts links based on drug names into text
 // This process is computationally inefficient, but requires no special formatting in the data
 function insertLinks(text, names, self) {
     // Loop through drug names and create links
     for (let i = 0; i < names.length; i++) {
-        if (text.toLowerCase().includes(names[i].toLowerCase()) && names[i] != self) {
-            // Replace for lower case and upper case
-            text = text.replaceAll(names[i], "<a href='detail.html?item=" + names[i] + "'>" + names[i] + "</a>")
-            text = text.replaceAll(names[i].toLowerCase(), "<a href='detail.html?item=" + names[i] + "'>" + names[i] + "</a>")
-        }
+        text = txt_replace(text, names[i], "<a href='detail.html?item=" + names[i] + "'>" + names[i] + "</a>")
     }
 
     // Now replace table names (just hardcoded since it's like that overall)
@@ -40,10 +44,10 @@ function insertLinks(text, names, self) {
         'Drugs List By Group', '21,23',
         'About Ferros (Iron), Vitamins and Multivitamins', '135,136',
         'Combination Treatment For Genito-Urinary Diseases', '137,172',
-        'Drugs Used For Post Partum Haemorrage (PPH) And Missed Or Incomplete Abortion', '139,143',
+        'Drugs Used For Post Partum Haemorrage PPH and Missed or Incomplete Abortion', '139,143',
         'About Anti-Retroviral Drugs', '145,146',
         'Use Of Antibiotics In Combination', '147,149',
-        'Drugs For The Treatement of New Cases Of TB', '150,159',
+        'Drugs For The Treatment of New Cases of TB', '150,159',
         'Antiseptics - Disinfectants', '160,162',
         'Wound Care / Abscess Care', '163,163',
         'IV Fluids', '164,169',
@@ -51,16 +55,13 @@ function insertLinks(text, names, self) {
         'Vaccination Schedule', '203,204'
     ]
 
-    for (let i = 0; i < pdfs.length; i += 2) {
-        if (text.toLowerCase().includes(pdfs[i].toLowerCase())) {
-            // Replace for lower case and upper case
-            text = text.replaceAll(pdfs[i], "<a href='pdf_viewer.html?pageRange=" + pdfs[i + 1] + "'>" + pdfs[i] + "</a>")
-            text = text.replaceAll(pdfs[i].toLowerCase(), "<a href='pdf_viewer.html?pageRange=" + pdfs[i + 1] + "'>" + pdfs[i] + "</a>")
-        }
+    text = text.replaceAll('(PPH)', 'PPH')
 
-        console.log(text.toLowerCase())
-        console.log(pdfs[i].toLowerCase())
+    for (let i = 0; i < pdfs.length; i += 2) {
+        text = txt_replace(text, pdfs[i], "<a href='pdf_viewer.html?pageRange=" + pdfs[i + 1] + "'>" + pdfs[i] + "</a>")
     }
+
+    text = text.replaceAll('PPH', '(PPH)')
 
     return text
 }
@@ -123,7 +124,7 @@ function populateDrugDetail(name, lang) {
                         div.id = categories[i]
 
                         // Insert title into div
-                        let title = document.createElement('h2')
+                        let title = document.createElement('h3')
                         title.textContent = titles[i]
                         div.appendChild(title)
 
