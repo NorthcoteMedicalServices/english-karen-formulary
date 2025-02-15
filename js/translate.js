@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   lang = localStorage.getItem("lang");
   elements = document.getElementsByClassName("translate");
   if(elements.length > 0){
-    translate();
+    populatePage();
   }else{
     callDrugDetails();
   }
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function translatePage(){
   //swap localStorage language
   localStorage.setItem("lang", (localStorage.getItem("lang") == "kar") ? "eng" : "kar");
-  translate()
+  populatePage()
   callDrugDetails();
 }
 
@@ -54,7 +54,7 @@ function callDrugDetails(){
   }
 }
 
-function translate(){
+function populatePage(){
   lang = localStorage.getItem("lang");
   language =  lang == "eng" ? 0 : 1;
   document.documentElement.lang = localStorage.getItem("lang");
@@ -72,8 +72,8 @@ translations = {
   home2:["Z-SCORES TABLES","Z-SCORES TABLES kar"],
   home3:["VIEW FORMULARY","တၢ်ကွၢ်ကသံၣ်လံာ်နဲၣ်ကျဲအံၤ"],
   home4:["DRUGS IN PREGNANCY","ကသံၣ်သ့ၣ်တဖၣ်လၢၦၤမိၢ်ဒၢဂီၢ်"],
-  home6:["Drugs For The Treatement of New Cases Of TB","ကသံၣ်ကူစါယါဘျါ(ထံၣ်ဘံၣ်)ဃၢ်လၢၦၤလၢအဘၣ်တၢ်ဆါအသီတဖၣ်အဂီၢ်"],
   home5:["Malaria Protocols","တၢ်ညၣ်ဂိၢ်ဃၢ်ကသံၣ်အကျိၤအကျဲ"],
+  home6:["Drugs For The Treatement of New Cases Of TB","ကသံၣ်ကူစါယါဘျါ(ထံၣ်ဘံၣ်)ဃၢ်လၢၦၤလၢအဘၣ်တၢ်ဆါအသီတဖၣ်အဂီၢ်"],
   //Drug Search
 
   // Table of contents
