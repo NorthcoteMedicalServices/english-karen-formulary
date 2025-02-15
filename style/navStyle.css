@@ -1,41 +1,52 @@
-.navbar{
-    position: relative;
+#navbar{
+    position: fixed;
     background-color: rgb(64, 64, 64);
     overflow: hidden;
     min-height: 40px;
-    width: 300px;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    width: 100%;
+    top: 0px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
 }
+
+.navigation{
+  width: 300px;
+  height: 100%;
+  padding-top: 5px;
+  margin-top: 120px;
+}
+
 
 .navButton{
   height: 30px;
   width: 30px;
-  position: absolute;
-  top: 5px;
   cursor: pointer;
+  align-items: center;
 }
 
 #backArrow{
-    left: 15px;
+    position: relative;
+    left: 10px;
 }
 
 #homeButton{
-    left: 130px;
+    position: relative;
+}
+
+#homeButton img{
+  width: 100%;
+  height: auto;
 }
 
 #translateButton{
-    left: 235px;
-}
-
-.icon{
-  height: 100%;
-  width: 100%;
-  overflow: auto;
+    overflow: visible;
+    position: relative;
+    right: 40px;
 }
 
 .arrow {
-  top: 10.5px;
   height: 12px;
   width: 12px;
   border: solid rgb(255, 255, 255);
@@ -81,7 +92,7 @@
 
 /* The toggle knob */
 .slider-button::before {
-  content: "";
+  content: "Label";
   position: absolute;
   height: 22px;
   width: 22px;
@@ -101,23 +112,4 @@
 /* Move the knob when checked */
 .slider input:checked + .slider-button::before {
   transform: translateX(30px); /* Move the knob to the right */
-}
-
-/* The container spans the full width and height of the viewport and allows scrolling */
-#pdf-container {
-  width: 100%;
-  max-width: 100%; /* Prevent overflow */
-  height: 100vh; /* Full viewport height */
-  overflow-y: scroll; /* Enable vertical scrolling */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  background-color: #f5f5f5; /* Optional background for contrast */
-  padding: 10px; /* Add some padding around the pages */
-  box-sizing: border-box; /* Include padding in the width calculation */
-}
-
-/* Ensure each canvas page fills the container's width */
-#pdf-container canvas {
-  width: 100%; /* Make the canvas responsive */
-  height: auto; /* Maintain the aspect ratio */
-  margin-bottom: 10px; /* Add spacing between pages */
 }

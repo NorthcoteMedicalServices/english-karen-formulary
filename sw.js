@@ -1,46 +1,57 @@
-const CACHE_NAME = `karen-formulary-v1`;  // Keep a version if necessary
+const CACHE_NAME = `formulary_cache_v1`;
 
-// Use the install event to pre-cache all initial resources
+// Use the install event to pre-cache all initial resources from file_list.json.
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
-    const cache = await caches.open(CACHE_NAME);
-    await cache.addAll([
-      './',
-      './assets/'
-    ]);
-    self.skipWaiting(); // Immediately activate the new service worker
+    try {
+      const cache = await caches.open(CACHE_NAME);
+      
+      // Fetch the JSON file that lists all the files to cache.
+      const response = await fetch('file_list.json');
+      if (!response.ok) {
+        throw new Error(`Failed to fetch file_list.json: ${response.statusText}`);
+      }
+      
+      // Parse the JSON to get the file list.
+      const fileList = await response.json();
+      
+      // Cache all the files in the file list.
+      await cache.addAll(fileList);
+      
+      // Optionally, force the waiting service worker to become active immediately.
+      self.skipWaiting();
+    } catch (error) {
+      console.error('Error during service worker installation:', error);
+    }
   })());
 });
 
-// On SW activate, remove old caches and take control
-self.addEventListener('activate', event => {
-  event.waitUntil((async () => {
-    const cacheKeys = await caches.keys();
-    await Promise.all(
-      cacheKeys.map(key => {
-        if (key !== CACHE_NAME) {
-          return caches.delete(key);
-        }
-      })
-    );
-    self.clients.claim(); // Take control of any open pages
-  })());
-});
-
-// Always try the network first, fallback to cache if offline
 self.addEventListener('fetch', event => {
   event.respondWith((async () => {
-    try {
-      const fetchResponse = await fetch(event.request);
-      
-      // Update cache with latest response
-      const cache = await caches.open(CACHE_NAME);
-      cache.put(event.request, fetchResponse.clone());
-      
-      return fetchResponse;
-    } catch (e) {
-      // If network fails, return cached version
-      return caches.match(event.request);
+    const cache = await caches.open(CACHE_NAME);
+    
+    // Try matching the request exactly.
+    let cachedResponse = await cache.match(event.request);
+    
+    // If not found, try matching while ignoring the query parameters.
+    if (!cachedResponse) {
+      cachedResponse = await cache.match(event.request, { ignoreSearch: true });
+    }
+    
+    if (cachedResponse) {
+      return cachedResponse;
+    } else {
+      try {
+        // If the resource isn’t in the cache, try fetching it from the network.
+        const fetchResponse = await fetch(event.request);
+        // Cache the fetched response for future use.
+        cache.put(event.request, fetchResponse.clone());
+        return fetchResponse;
+      } catch (e) {
+        // Optionally, return a fallback response here.
+        console.error('Fetch failed; returning offline page instead.', e);
+        throw e;
+      }
     }
   })());
 });

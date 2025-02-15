@@ -2,7 +2,7 @@
 import * as pdfjsLib from './pdfjs/build/pdf.mjs';
 
 // Set the worker source
-pdfjsLib.GlobalWorkerOptions.workerSrc = './pdfjs/build/pdf.worker.mjs';
+pdfjsLib.GlobalWorkerOptions.workerSrc = './pdf.worker.mjs';
 
 /**
  * Function to render a PDF document in a specified page range
@@ -10,18 +10,18 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = './pdfjs/build/pdf.worker.mjs';
  * @param {number[]} pageRange - Array listing the start and end page [startPage, endPage].
  * @param {string} containerId - ID of the container where the PDF will be rendered.
  */
-function renderPdf(pdfUrl, pageRange, containerId) {
+async function renderPdf(pdfUrl, pageRange, containerId) {
     const container = document.getElementById(containerId);
-
+    
     // Clear previous content in container
     container.innerHTML = '';
 
-    pdfjsLib.getDocument(pdfUrl).promise.then(pdfDoc => {
-        const startPage = Math.max(pageRange[0], 1);
-        const endPage = Math.min(pageRange[1], pdfDoc.numPages);
+    pdfjsLib.getDocument(pdfUrl).promise.then(async pdfDoc => {
+        const startPage = Math.max(pageRange[0] + 7, 1);
+        const endPage = Math.min(pageRange[1] + 7, pdfDoc.numPages);
 
         for (let pageNum = startPage; pageNum <= endPage; pageNum++) {
-            pdfDoc.getPage(pageNum).then(page => {
+            await pdfDoc.getPage(pageNum).then(page => {
                 const viewport = page.getViewport({ scale: 1.5 });
 
                 // Create canvas element for each page

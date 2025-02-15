@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drug Search</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <link rel="stylesheet" href="../style/navStyle.css">
+    <script src="../js/detail.js"></script>
+    <script src="../js/csv_reader.js"></script>
+    <script src="../js/drug_search.js"></script>
+    <script src="../js/translate.js"></script>
+</head>
+<body>
+  <div id="navbar"></div>
+  <h1>Drug Search</h1>
+  
+  <!-- Navigation Toolbar, relevant files are translate.js and navStyle.css-->
+
+
+    <!-- Search bar -->     
+    <div class="search-bar">
+        <input type="text" id="search_bar" onkeyup="filterSearch()" placeholder="Search">
+    </div>
+
+
+    <div class="scrollable-list">
+        <!-- Drug list (gets filled by js) -->
+        <ul id="drug_list"></ul>
+
+        <script>
+            // Fetch drug info and display
+            fillDrugList()
+        </script>
+    </div>
+</body>
+</html>
