@@ -65,8 +65,8 @@ translations = {
   home2:["Z-SCORES","Z-SCORES"],
   home3:["VIEW FORMULARY","တၢ်ကွၢ်ကသံၣ်လံာ်နဲၣ်ကျဲအံၤ"],
   home4:["DRUGS IN PREGNANCY","ကသံၣ်သ့ၣ်တဖၣ်လၢၦၤမိၢ်ဒၢဂီၢ်"],
-  home6:["TB (TUBERCULOSIS)", "tb kar"],
-  home5:["Malaria", "malaria kar"],
+  home5:["TB (TUBERCULOSIS)", "tb kar"],
+  home6:["Malaria", "malaria kar"],
   //Drug Search
 
   // Table of contents
