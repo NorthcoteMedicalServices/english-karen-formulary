@@ -153,10 +153,10 @@ button:focus {
     background-color: #e6e6e6; 
   }
   
-  
-.search-bar {
+  .search-bar {
     display: flex;
     justify-content: center;
+    margin: 20px 0;
     width: 305px;
 }
 
