@@ -1,5 +1,5 @@
 #navbar{
-  padding: 20px;
+  padding: 10px;
   width: auto;
   display: flex;
   justify-content: space-between;
@@ -23,6 +23,11 @@
   align-items: center;
 }
 
+#buttonbox{
+  width: 60px;
+  text-align: center;
+}
+
 #homeButton{
     position: relative;
 }
@@ -36,6 +41,14 @@
     overflow: visible;
     position: relative;
     right: 40px;
+}
+
+#translate{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .arrow {
