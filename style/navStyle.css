@@ -1,14 +1,10 @@
 #navbar{
-    position: fixed;
-    background-color: rgb(64, 64, 64);
-    overflow: hidden;
-    min-height: 40px;
-    width: 100%;
-    top: 0px;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: auto;
+  padding: 10px;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(64, 64, 64);
 }
 
 .navigation{
@@ -20,15 +16,16 @@
 
 
 .navButton{
+  display: inline-block;
   height: 30px;
   width: 30px;
   cursor: pointer;
   align-items: center;
 }
 
-#backArrow{
-    position: relative;
-    left: 10px;
+#buttonbox{
+  width: 60px;
+  text-align: center;
 }
 
 #homeButton{
@@ -44,6 +41,15 @@
     overflow: visible;
     position: relative;
     right: 40px;
+}
+
+#translate{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
 }
 
 .arrow {
@@ -63,10 +69,9 @@
 /* Slider container */
 .slider {
   position: relative;
-  display: inline-block;
+  display: flex;
   width: 60px;
   height: 30px;
-  margin-bottom: 10px; /* Space between sliders */
 }
 
 /* Hide the default checkbox */
@@ -92,7 +97,7 @@
 
 /* The toggle knob */
 .slider-button::before {
-  content: "Label";
+  content: "";
   position: absolute;
   height: 22px;
   width: 22px;
