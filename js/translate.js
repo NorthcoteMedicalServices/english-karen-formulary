@@ -19,7 +19,7 @@ let navbar = `
         <span class="slider-button" onclick="translatePage()"></span>
         <display:inline-block;>
       </label>
-      En/ကညီကျိာ်
+      En/ကညီ
     </div>
   </div>
 `
