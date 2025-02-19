@@ -35,24 +35,24 @@ function insertLinks(text, names, self) {
 
     // Now replace table names (just hardcoded since it's like that overall)
     let pdfs = [
-        'Essential Drug Formulary 2021 edition', '1,218',
-        'Introduction To 2021 Edition', '8,11',
-        'Introduction To 2013 Edition', '12,14',
-        'Genereal Guidelines On How To Use The Formulary', '15, 16',
-        'Drugs In Pregnancy', '17,18',
-        'Drugs and G6PD Deficiency', '19,20',
-        'Drugs List By Group', '21,23',
-        'About Ferros (Iron), Vitamins and Multivitamins', '135,136',
-        'Combination Treatment For Genito-Urinary Diseases', '137,172',
-        'Drugs Used For Post Partum Haemorrage PPH and Missed or Incomplete Abortion', '139,143',
-        'About Anti-Retroviral Drugs', '145,146',
-        'Use Of Antibiotics In Combination', '147,149',
-        'Drugs For The Treatment of New Cases of TB', '150,159',
-        'Antiseptics - Disinfectants', '160,162',
-        'Wound Care / Abscess Care', '163,163',
-        'IV Fluids', '164,169',
-        'Malaria Protocols', '170,202',
-        'Vaccination Schedule', '203,204'
+        'Essential Drug Formulary 2021 edition', '6,211',
+        'Introduction To 2021 Edition', '1,4',
+        'Introduction To 2013 Edition', '5,7',
+        'Genereal Guidelines On How To Use The Formulary', '8,9',
+        'Drugs In Pregnancy', '10,11',
+        'Drugs and G6PD Deficiency', '12,13',
+        'Drugs List By Group', '14,16',
+        'About Ferros (Iron), Vitamins and Multivitamins', '128,129',
+        'Combination Treatment For Genito-Urinary Diseases', '130,165',
+        'Drugs Used For Post Partum Haemorrage PPH and Missed or Incomplete Abortion', '132,136',
+        'About Anti-Retroviral Drugs', '138,139',
+        'Use Of Antibiotics In Combination', '140,142',
+        'Drugs For The Treatment of New Cases of TB', '143,152',
+        'Antiseptics - Disinfectants', '153,155',
+        'Wound Care / Abscess Care', '156,156',
+        'IV Fluids', '158,162',
+        'Malaria Protocols', '163,195',
+        'Vaccination Schedule', '196,197'
     ]
 
     text = text.replaceAll('(PPH)', 'PPH')
