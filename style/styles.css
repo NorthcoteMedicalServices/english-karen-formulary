@@ -1,37 +1,41 @@
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-image: url('../assets/background.png');
-    height: 100%;
-    background-size: auto 100%;
-    background-repeat: repeat-x;
-    background-position: top center;
-    margin: 0;
-    background-color: #f0f0f0;
-    background-attachment: fixed;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+}
+
+.wrapper{
+  background-image: url('../assets/background.png');
+  background-size: auto 100%;
+  height: auto;
+  margin: 0px;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
 }
 
 h1 {
-    position: fixed;
-    top: 40px;
-    height: 46px;
-    width: 100%;
-    margin: 0px;
-    padding: 5px; 
-    color: white;
-    background-color: rgb(64, 64, 64); 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    text-align: center;
-    overflow: hidden;
+  min-height: 46px;
+  width: 100%;
+  margin: 0px;
+  padding: 0px; 
+  color: white;
+  background-color: rgb(64, 64, 64); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  text-align: center;
+  overflow:auto;
 }
 
 
 .scrollable-list {
     width: 300px;
-    margin: 100px;
     max-height: 400px;
     overflow-y: auto;
     border: 1px solid #ccc;
@@ -142,7 +146,7 @@ button:focus {
   .scrollable-list a {
     display: block; 
     text-decoration: none;
-    color: inherit; 
+    color: inherit;
   }
   
   .scrollable-list li:hover {
@@ -153,10 +157,11 @@ button:focus {
     display: flex;
     justify-content: center;
     margin: 20px 0;
+    width: 305px;
 }
 
 #search_bar {
-    width: 300px;
+    width: 302px;
     padding: 10px;
     border: 2px solid #ccc;
     border-radius: 5px;
