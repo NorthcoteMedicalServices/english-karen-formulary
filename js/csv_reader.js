@@ -28,9 +28,22 @@ function txt_replace(original, s, replacement) {
 // Inserts links based on drug names into text
 // This process is computationally inefficient, but requires no special formatting in the data
 function insertLinks(text, names, self) {
+    names = names.sort((a, b) => b.length - a.length)
+
     // Loop through drug names and create links
+    // Replaces drugs with numerical placeholders, then replaces those with drug links. Does this to avoid overlapping name issues
     for (let i = 0; i < names.length; i++) {
-        text = txt_replace(text, names[i], "<a href='detail.html?item=" + names[i] + "'>" + names[i] + "</a>")
+        // Don't replace ourself (or substrings of ourself)
+        if (!self.toLowerCase().includes(names[i].toLowerCase())) {
+            text = txt_replace(text, names[i], "PLACEHOLDER-" + i.toString() + "-")
+        }
+    }
+
+    for (let i = 0; i < names.length; i++) {
+        // Don't replace ourself
+        if (!self.toLowerCase().includes(names[i].toLowerCase())) {
+            text = txt_replace(text, "PLACEHOLDER-" + i.toString() + "-", "<a href='detail.html?item=" + names[i] + "'>" + names[i] + "</a>")
+        }
     }
 
     // Now replace table names (just hardcoded since it's like that overall)
