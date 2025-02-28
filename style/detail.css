@@ -24,3 +24,17 @@ body {
 #drug-info p {
   font-size: larger;
 }
+
+#drug-images {
+  text-align: center;
+  overflow-y: auto;
+  margin-top: 10px; /* Adjust this value as needed */
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+img {
+  width: 30%;
+  height: auto;
+  margin: 10px auto;
+}

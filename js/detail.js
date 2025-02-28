@@ -16,7 +16,6 @@ function drugDetails() {
 
     let lang = localStorage.getItem("lang") == "eng" ? "EN" : "KA";
     
-
     // Fill out data
     populateDrugDetail(item, lang)
 }

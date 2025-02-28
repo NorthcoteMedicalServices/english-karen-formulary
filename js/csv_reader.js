@@ -79,6 +79,29 @@ function insertLinks(text, names, self) {
     return text
 }
 
+// Get images
+async function getImages(name) {
+    await fetch("../assets/Drug_Images/" + name + "/1.png")
+        .then(response => {
+            if (response.ok) {
+                console.log("Insert image here")
+                let i = document.createElement("img")
+                i.src = "../assets/Drug_Images/" + name + "/1.png"
+                document.getElementById("drug-images").appendChild(i)
+            }
+        })
+        console.log("1")
+    return true
+}
+
+// Validate whether or not a given drug image exists
+function ImageExists(url) 
+{
+   var img = new Image();
+   img.src = url;
+   return img.height != 0;
+}
+
 // Fetch data for a specific drug and populate the detail page
 function populateDrugDetail(name, lang) {
     let data = fetch("../assets/drugDetails.csv")
@@ -115,12 +138,22 @@ function populateDrugDetail(name, lang) {
                     // Remove anything already in there (for language swapping)
                     obj.innerHTML = ''
 
-                    // Set title seperately
+                    // Set title separately
                     let title = document.getElementById("title")
                     title.innerHTML = info[0]
-
                     
-                    //document.getElementById("MEDICATION").textContent = info[0]
+                    // Set images
+                    for (let i = 1; i < 15; i++) {   // Shouldn't exceed 15
+                        let url = "../assets/Drug_Images/" + name.toUpperCase() + "/" + i + ".png"
+                        if (ImageExists(url)) {
+                            // Add to html
+                            let img = document.createElement("img")
+                            img.src = url
+                            obj.appendChild(img)
+                        } else {
+                            break;
+                        }
+                    }
 
                     // Then set individual parts
                     for (let i = 1; i < categories.length; i++) {
