@@ -143,14 +143,17 @@ function populateDrugDetail(name, lang) {
                     title.innerHTML = info[0]
                     
                     // Set images
+                    console.log("Trying to load images")
                     for (let i = 1; i < 15; i++) {   // Shouldn't exceed 15
                         let url = "../assets/Drug_Images/" + name.toUpperCase() + "/" + i + ".png"
-                        if (ImageExists(url)) {
+                        if (ImageExists(url)) {   // This doesn't work consistently, causes loading bug (need new check)
                             // Add to html
                             let img = document.createElement("img")
                             img.src = url
                             obj.appendChild(img)
+                            console.log(img.complete)
                         } else {
+                            console.log("Nope")
                             break;
                         }
                     }
