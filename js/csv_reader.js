@@ -94,14 +94,6 @@ async function getImages(name) {
     return true
 }
 
-// Validate whether or not a given drug image exists
-function ImageExists(url) 
-{
-   var img = new Image();
-   img.src = url;
-   return img.height != 0;
-}
-
 // Fetch data for a specific drug and populate the detail page
 function populateDrugDetail(name, lang) {
     let data = fetch("../assets/drugDetails.csv")
@@ -143,19 +135,13 @@ function populateDrugDetail(name, lang) {
                     title.innerHTML = info[0]
                     
                     // Set images
-                    console.log("Trying to load images")
                     for (let i = 1; i < 15; i++) {   // Shouldn't exceed 15
                         let url = "../assets/Drug_Images/" + name.toUpperCase() + "/" + i + ".png"
-                        if (ImageExists(url)) {   // This doesn't work consistently, causes loading bug (need new check)
-                            // Add to html
-                            let img = document.createElement("img")
-                            img.src = url
-                            obj.appendChild(img)
-                            console.log(img.complete)
-                        } else {
-                            console.log("Nope")
-                            break;
-                        }
+                        // Add to html
+                        let img = document.createElement("img")
+                        img.src = url
+                        img.onerror = function(){this.style.display='none';}
+                        obj.appendChild(img)
                     }
 
                     // Then set individual parts
@@ -173,10 +159,12 @@ function populateDrugDetail(name, lang) {
                         div.id = categories[i]
 
                         // Insert title into div
-                        let title = document.createElement('h3')
-                        title.textContent = titles[i]
-                        div.appendChild(title)
-
+                        if (titles[i] != "Dosage" && titles[i] != "Description") {
+                            let title = document.createElement('h3')
+                            title.textContent = titles[i]
+                            div.appendChild(title)
+                        }
+                        
                         // Insert text
                         let text = document.createElement('p')
                         text.innerHTML = txt_with_links
