@@ -1,9 +1,9 @@
 {
     "lang": "en-us",
-    "name": "Karen Medical Formulary",
-    "short_name": "Karen Formulary",
+    "name": "Karen-English Medical Formulary",
+    "short_name": "Karen-English Formulary",
     "description": "A medical fomrulary app in the Karen language.",
-    "start_url": "https://sw.cs.wwu.edu/~lowneyp/SeniorProject/index.html",
+    "start_url": "https://sw.cs.wwu.edu/~lowneyp/SeniorProject/html/index.html",
     "background_color": "#2f3d58",
     "theme_color": "#2f3d58",
     "orientation": "any",
