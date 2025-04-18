@@ -137,6 +137,7 @@ function populateDrugDetail(name, lang) {
                     // Set images
                     for (let i = 1; i < 15; i++) {   // Shouldn't exceed 15
                         let url = "../assets/Drug_Images/" + name.toUpperCase() + "/" + i + ".png"
+                        url = url.replace('%', '%25')  // Fix % sign in URL, basically just for Dextrose
                         // Add to html
                         let img = document.createElement("img")
                         img.src = url
