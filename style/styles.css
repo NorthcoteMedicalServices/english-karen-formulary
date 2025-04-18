@@ -23,15 +23,14 @@ body {
 }
 
 h1 {
-  min-height: 46px;
+  height: auto;
   width: 100%;
   margin: 0px;
-  padding: 0px; 
+  padding: 5px; 
   color: white;
   background-color: rgb(64, 64, 64); 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   text-align: center;
-  overflow:auto;
 }
 
 

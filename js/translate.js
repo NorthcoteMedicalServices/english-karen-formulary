@@ -2,29 +2,33 @@
 
 let language = 0; // 0 is for english, 1 is for karen
 let elements;
-localStorage.setItem("lang", "eng");
 let navbar = `
-  <div id="buttonbox">
-  <div class = "navButton arrow left" onclick="history.back()"></div>
-  </div>
+  <div id="nav">
+    <div id="buttonbox">
+      <div class = "navButton arrow left" onclick="history.back()"></div>
+    </div>
 
-  <div id="buttonbox">
-  <a class = "navButton" id="homeButton" href="index.html"><img src="../assets/homeIcon.png" alt=""></a>
-  </div>
-  
-  <div id="buttonbox">
-    <div id="translate">
-      <label class="slider">
-        <input id = "toggle" type="checkbox">
-        <span class="slider-button" onclick="translatePage()"></span>
-        <display:inline-block;>
-      </label>
-      En/ကညီ
+    <div id="buttonbox">
+      <a class = "navButton" id="homeButton" href="index.html"><img src="../assets/homeIcon.png" alt=""></a>
+    </div>
+    
+    <div id="buttonbox">
+      <div id="translate">
+        <label class="slider">
+          <input id = "toggle" type="checkbox">
+          <span class="slider-button" onclick="translatePage()"></span>
+          <display:inline-block;>
+        </label>
+        En/ကညီ
+      </div>
     </div>
   </div>
 `
 document.addEventListener("DOMContentLoaded", () => {
   lang = localStorage.getItem("lang");
+  if(!lang){
+    localStorage.setItem("lang", "eng");
+  }  
   elements = document.getElementsByClassName("translate");
   if(elements.length > 0){
     populatePage();
@@ -70,7 +74,7 @@ function populatePage(){
 translations = {
   //Home Page
   home1:["DRUG SEARCH","တၢ်ဃုကသံၣ်"],
-  home2:["Z-SCORES TABLES","Z-SCORES TABLES kar"],
+  home2:["Z-SCORES TABLES","Z-SCORES TABLES"],
   home3:["VIEW FORMULARY","တၢ်ကွၢ်ကသံၣ်လံာ်နဲၣ်ကျဲအံၤ"],
   home4:["DRUGS IN PREGNANCY","ကသံၣ်သ့ၣ်တဖၣ်လၢၦၤမိၢ်ဒၢဂီၢ်"],
   home5:["Malaria Protocols","တၢ်ညၣ်ဂိၢ်ဃၢ်ကသံၣ်အကျိၤအကျဲ"],
