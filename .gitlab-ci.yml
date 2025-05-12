@@ -50,7 +50,7 @@ stages:          # List of stages for jobs, and their order of execution
 
 deploy:
   tags:
-    - shell  # or use - docker
+    - docker
   script:
     - apt-get update -qq && apt-get install -y lftp
     - lftp -e "
