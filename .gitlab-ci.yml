@@ -54,7 +54,7 @@ deploy:
   script:
     - apt-get update -qq && apt-get install -y lftp
     - lftp -e "
-        open ftp:pixie-ftp.porkbun.com;
+        open ftp://pixie-ftp.porkbun.com;
         user northcotemedicalservices.com Y1JSCmIDnoBJgCyIBqDx(DgJs;
         mirror --reverse --delete --verbose ./ /formulary;
         bye
