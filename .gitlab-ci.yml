@@ -4,6 +4,8 @@ pages:
     - mkdir .public
     - cp -r * .public || true
     - mv .public public
+  tags:
+    - docker
   artifacts:
     paths:
       - public
