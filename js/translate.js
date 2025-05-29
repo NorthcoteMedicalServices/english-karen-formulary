@@ -9,7 +9,7 @@ let navbar = `
     </div>
 
     <div id="buttonbox">
-      <a class = "navButton" id="homeButton" href="index.html"><img src="../assets/homeIcon.png" alt=""></a>
+      <a class = "navButton" id="homeButton" href="index.html"><img src="./assets/homeIcon.png" alt=""></a>
     </div>
     
     <div id="buttonbox">
