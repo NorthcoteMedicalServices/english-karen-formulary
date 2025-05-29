@@ -86,7 +86,7 @@ async function getImages(name) {
             if (response.ok) {
                 console.log("Insert image here")
                 let i = document.createElement("img")
-                i.src = "../assets/Drug_Images/" + name + "/1.png"
+                i.src = "./assets/Drug_Images/" + name + "/1.png"
                 document.getElementById("drug-images").appendChild(i)
             }
         })
@@ -96,7 +96,7 @@ async function getImages(name) {
 
 // Fetch data for a specific drug and populate the detail page
 function populateDrugDetail(name, lang) {
-    let data = fetch("../assets/drugDetails.csv")
+    let data = fetch("./assets/drugDetails.csv")
                 .then(response => response.text())
                 .then(data => {
                     // Now we have the data
@@ -137,7 +137,7 @@ function populateDrugDetail(name, lang) {
                     // Set images
                     for (let i = 1; i < 15; i++) {   // Shouldn't exceed 15
                         temp = name.replace('/', '_')   // Drugs with / names are stored with _ in db
-                        let url = "../assets/Drug_Images/" + temp.toUpperCase() + "/" + i + ".png"
+                        let url = "./assets/Drug_Images/" + temp.toUpperCase() + "/" + i + ".png"
                         url = url.replace('%', '%25')  // Fix % sign in URL, basically just for Dextrose
 
                         // Add to html
