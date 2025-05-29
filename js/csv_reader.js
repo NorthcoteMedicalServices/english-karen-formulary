@@ -1,6 +1,6 @@
 // Fetch the drug list data and insert into the HTML list
 function fillDrugList() {
-    let data = fetch("../assets/drugDetails.csv")
+    let data = fetch("./assets/drugDetails.csv")
                 .then(response => response.text())
                 .then(data => {
                     // Now we have the data
@@ -81,7 +81,7 @@ function insertLinks(text, names, self) {
 
 // Get images
 async function getImages(name) {
-    await fetch("../assets/Drug_Images/" + name + "/1.png")
+    await fetch("./assets/Drug_Images/" + name + "/1.png")
         .then(response => {
             if (response.ok) {
                 console.log("Insert image here")
