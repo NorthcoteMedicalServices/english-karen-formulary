@@ -8,6 +8,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    permissions:   # Define write permissions for the repository
+      contents: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
