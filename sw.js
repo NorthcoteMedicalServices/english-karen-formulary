@@ -1,4 +1,5 @@
 const CACHE_NAME = `formulary_cache_v1`;
+const revision = "June 19 2025"      // The internet says changing this file helps force an update
 
 // Use the install event to pre-cache all initial resources from file_list.json.
 self.addEventListener('install', event => {
