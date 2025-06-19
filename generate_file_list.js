@@ -14,7 +14,7 @@ async function getAllFiles(dir) {
   // Process each entry and recurse for subdirectories
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name);
-    if (entry.isDirectory()) {
+    if (entry.isDirectory() && !entry.name.includes('.git')) {   // Don't cache .git files since they're only for dev
       files = files.concat(await getAllFiles(fullPath));
     } else if (entry.isFile()) {
       files.push(fullPath);
