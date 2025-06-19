@@ -15,8 +15,13 @@ self.addEventListener('install', event => {
       // Parse the JSON to get the file list.
       const fileList = await response.json();
       
-      // Cache all the files in the file list.
-      await cache.addAll(fileList);
+      // Cache all the files in the file list. (cache separately so one bad file doesn't break it)
+      await Promise.all(fileList.map(file => {
+        try {
+          cache.add(file)
+        }
+        catch (e) {console.error(`lol failed: ${file}`)}
+      }))
       
       // Optionally, force the waiting service worker to become active immediately.
       self.skipWaiting();
