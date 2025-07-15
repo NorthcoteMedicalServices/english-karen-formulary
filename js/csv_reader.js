@@ -136,7 +136,7 @@ function populateDrugDetail(name, lang) {
                     
                     // Set images
                     for (let i = 1; i < 15; i++) {   // Shouldn't exceed 15
-                        temp = name.replace('/', '_')   // Drugs with / names are stored with _ in db
+                        temp = name.replace('/', '_').trim()   // Drugs with / names are stored with _ in db
                         let url = "./assets/Drug_Images/" + temp.toUpperCase() + "/" + i + ".png"
                         url = url.replace('%', '%25')  // Fix % sign in URL, basically just for Dextrose
 
